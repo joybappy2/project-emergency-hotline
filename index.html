@@ -25,20 +25,39 @@
 </head>
 <body>
     <!-- NAVBAR -->
-     <nav class="h-24 border-2 max-w-screen-2xl m-auto">
+     <nav class="h-24 max-w-screen-2xl m-auto flex justify-between">
 
 
         <!-- LOGO AND SERVICE NAME - LEFT-->
-        <div>
-            <div></div>
-            <div></div>
+        <div class="flex items-center max-w-52 gap-3">
+            <div class="">
+                <img src="./assets/logo.png" alt="" class="w-[100%]">
+            </div>
+            <div class="">
+                <h1 class="text-[#006747] font-bold text-[1.6rem]/7">Emergency Service</h1>
+            </div>
         </div>
 
         <!-- HEART - COIN - COPY - ICON - RIGHT-->
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="flex gap-10 items-center">
+
+            <!-- HEART -->
+            <div class="h-12 w-28 flex justify-around items-center p-5 bg-[#41ff6a23] rounded-4xl">
+                <span class="font-bold text-lg">0</span><img src="./assets/heart.png" alt="" width="40%">
+            </div>
+
+
+            <!-- COIN -->
+            <div class="h-12 w-28 flex justify-around items-center p-5 bg-[#41ff6a23] rounded-4xl">
+                <span class="font-bold text-lg">100</span><img src="./assets/coin.png" alt="" width="33%">
+            </div>
+
+
+            <!-- COPY -->
+            <div class="h-12 w-28 flex justify-around items-center p-5 bg-[#00A63E] rounded-4xl">
+                <span class="font-semibold text-lg text-white">2</span> <p class="text-white text-lg font-semibold">Copy</p>
+            </div>
+
         </div>
 
      </nav>
