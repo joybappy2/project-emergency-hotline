@@ -1,3 +1,13 @@
+// function to get innerText
+function getElement( id ) {
+    return document.getElementById(id)
+}
+// function to convert string to number
+function getNumber( text ) {
+    return parseInt(text)
+}
+
+
 
 // Increasing Heart Number Value if Heart Icon Clicked
 let heartCount = 0;
@@ -11,16 +21,8 @@ heartIcons.forEach( function ( heartIcon ) {
 } )
 
 
-// function to get innerText
-function getElement( id ) {
-    return document.getElementById(id)
-}
-// function to convert string to number
-function getNumber( text ) {
-    return parseInt(text)
-}
-
 // showing alert on call button click with service name and number
+const historyCardContainer = document.getElementById("history-card-container")
 const callPrice = 20
 const callBtns = document.querySelectorAll( ".call-button" )
 callBtns.forEach( function ( btn ) {
@@ -34,10 +36,28 @@ callBtns.forEach( function ( btn ) {
         const newTotalCoin = totalCoin - callPrice
         console.log(totalCoin)
         if ( totalCoin < 20 ) {
-            alert( "❌ Insufficient Coin. Need Atleast 20 Coin To Make A Call." )
+            alert( "❌ আপনার পর্যাপ্ত কয়েন নাই। কলটি করতে ২০টি কয়েন প্রয়োজন।" )
             return
         }
         coinElement.innerText = newTotalCoin
         alert( `📞 Calling ${ serviceName }    ${ serviceNumber }...` )
+
+
+
+        const callHistory = document.createElement( "div" )
+        callHistory.innerHTML = `<div>
+                            <p> ${serviceName} </p>
+                            <p class="opacity-70"> ${serviceNumber} </p>
+                        </div>
+                        <div>
+                            <p> ${new Date().toLocaleTimeString()} </p>
+                        </div>`
+        
+        historyCardContainer.appendChild( callHistory )
+        callHistory.classList.add('history-card', 'flex', 'justify-between', 'bg-gray-100','rounded-lg', 'p-3', 'mb-3')
+        
     })
 })
+
+
+
