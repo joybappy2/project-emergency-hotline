@@ -59,8 +59,24 @@ callBtns.forEach( function ( btn ) {
     })
 })
 
-
+// clear history btn functionality
 const clearHistoryBtn = getElement("clear-history-btn")
 clearHistoryBtn.addEventListener( "click", function () {
     historyCardContainer.replaceChildren()
+})
+
+
+// copy btn functionality
+let copyCount = 2
+const copyBtns = document.querySelectorAll( ".copy-btn" )
+copyBtns.forEach( function ( copybtn ) {
+    copybtn.addEventListener( "click", function () {
+        copyCount += 1
+        console.log("copy tn clicked")
+        const copyCountEl = getElement( "copy-count" )
+        copyCountEl.innerText = copyCount
+        const copyBtnParent = copybtn.parentNode.parentNode.childNodes
+        const hotlineNumber = copyBtnParent[ 11 ]
+        navigator.clipboard.writeText(hotlineNumber.innerText)
+    })
 })
