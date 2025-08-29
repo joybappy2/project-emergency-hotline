@@ -77,6 +77,7 @@ copyBtns.forEach( function ( copybtn ) {
         copyCountEl.innerText = copyCount
         const copyBtnParent = copybtn.parentNode.parentNode.childNodes
         const hotlineNumber = copyBtnParent[ 11 ]
-        navigator.clipboard.writeText(hotlineNumber.innerText)
+        navigator.clipboard.writeText( hotlineNumber.innerText )
+        alert(`নম্বর কপি হয়েছেঃ ${hotlineNumber.innerText}`)
     })
 })
