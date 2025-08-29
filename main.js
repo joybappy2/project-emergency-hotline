@@ -10,7 +10,9 @@ function getNumber(text) {
 // Increasing Heart Number Value if Heart Icon Clicked
 let heartCount = 0;
 const heartIcons = document.querySelectorAll(".heart-icon");
-heartIcons.forEach(function (heartIcon) {
+heartIcons.forEach( function ( heartIcon ) {
+  heartIcon.classList.add( "cursor-pointer" )
+  heartIcon.classList.add("hover:text-green-500","hover:text-xl")
   heartIcon.addEventListener("click", function () {
     heartCount += 1;
     const heartCountEl = document.getElementById("heart-count");
