@@ -54,10 +54,13 @@ callBtns.forEach( function ( btn ) {
                         </div>`
         
         historyCardContainer.appendChild( callHistory )
-        callHistory.classList.add('history-card', 'flex', 'justify-between', 'bg-gray-100','rounded-lg', 'p-3', 'mb-3')
+        callHistory.classList.add('history-card', 'flex', 'justify-between', 'items-center', 'bg-gray-100','rounded-lg', 'p-3', 'mb-3')
         
     })
 })
 
 
-
+const clearHistoryBtn = getElement("clear-history-btn")
+clearHistoryBtn.addEventListener( "click", function () {
+    historyCardContainer.replaceChildren()
+})
