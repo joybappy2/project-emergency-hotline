@@ -45,7 +45,7 @@ callBtns.forEach(function (btn) {
                             <p class="opacity-70"> ${serviceNumber} </p>
                         </div>
                         <div>
-                            <p> ${new Date().toLocaleTimeString()} </p>
+                            <p> ${new Date().toLocaleTimeString("en-Us")} </p>
                         </div>`;
 
     historyCardContainer.appendChild(callHistory);
@@ -69,7 +69,7 @@ clearHistoryBtn.addEventListener("click", function () {
 });
 
 // copy btn functionality
-let copyCount = 2;
+let copyCount = 0;
 const copyBtns = document.querySelectorAll(".copy-btn");
 copyBtns.forEach(function (copybtn) {
   copybtn.addEventListener("click", function () {

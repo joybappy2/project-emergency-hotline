@@ -1,165 +1,61 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-005
-
-### 📅 Deadline For 60 marks: 29th August, 2025 (11:59 pm ⏱️)
-
-### 📅 No Deadline For 50 marks
-
-### 📅 Deadline For 30 marks: Any time after 29th August.
-
----
-
-## ✅ Main Requirements (50 Marks)
-
-### 1. Navbar
-
-- **Website name & logo** on the left as Figma
-- **Heart icon, coin count (default-100), and Copy Count** on the right as Figma
-
----
-
-### 2. Hero Section
-
-- **Background Gradient** in the Whole Section
-- **A Relevant Logo** at the top-center
-- **Section Title** in the center
-- **A Relevant Slogan** in the bottom Center
-
----
-
-### 2. Main Section
-
-This Section will have layout as figma
-
-<table border=1 width="100%" cellpadding="50">
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
- </tr>
- <tr>
-    <td colspan=9 >Card Section</td>
-    <td colspan=3>History Section</td>
- </tr>
-</table>
-
-### Emergency Hotline Section
-
-- **Show Minimum 6 cards**. Each card will contain:
-  - Icon or Image
-  - Relevant Name
-  - Relevant Name in English
-  - Hotline number for calling
-  - Category Badge
-  - 💗 icon at left
-  - **2 buttons** at the bottom: Copy and Call with icons as Figma
-
-### History Section
-
-- **A white Background** in the whole section
-- **History Title with icon** at the top-left as Figma
-- **Clear History Button** at the top-right as Figma
-
----
-
-### 3. Responsiveness (5 Marks)
-
-- Website should be fully **responsive for mobile devices** (implementation up to you)
-
----
-
-## Functionalities
-
-### 4. Heart Icons
-
-- Clicking on the 💗 **heart icon** of any card will increase the count in the Navbar
-
----
-
-### 5. Call Buttons
-
-- On clicking a card's **Call Button**, following actions will happen:
-  - Show an **alert** with a message including the service name and number
-  - Each call will **cut 20 coins**. Reduce Coin after each click.
-  - If coins are less than 20, show a relevant alert and terminate the process.
-  - Add this service into the **Call History section** with:
-    - Service name
-    - Service number
-
----
-
-### 5. Call History Section
-
-- Show all called services with name & number. This will empty initially. when call button clicked it will filled dynamically.
-- A **Clear History button** on the right
-- Clicking this button will remove all data from call history
-
----
-
-## Create Readme
-
-You have to create a `Readme.md` file. and write down following questions. Dont Try to copy paste from AI Tools. Just write what you know about these. If you don't know , then search , learn , understand and then write.
-
-### 6. Answer the following questions clearly:
-
 1. What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
+   **Answer 1**
+   `getElementById` `getElementsByClassName` `and querySelector / querySelectorAll` All of these are functions to access DOM Element. But there are few differences between them.
+
+## getElementById
+
+We use getElementById to select a single DOM Element with it's ID. Every single HTML Element should have a unique ID. So if we need to get an element we use getElementById.
+e.g. if we I want to select a button with it's ID I will write the following code.
+const button = document.getElementById("buttonIDhere")
+
+## getElementsByClassName
+
+`getElementsByClassName` We use this function to access DOM Elements by their class name. Multiple DOM Elements can have the same class name. So if we need to select all the elements which have the same class We use getElementsByClassName. getElementsByClassName give us a HTML COLLECTION. HTML COLLECTION is an array like object. It has index like array but we can't perform all the functions and methods that can be performed on an array. But it is possible to convert this HTML COLLECTION to an array using Array.from(). Then I can use it as an array.
+
+## querySelector
+
+querySelector is used to access DOM Elements. But instead of just class name or id we have to put a `#` for id and `.` for class name and for tag name we can simply write the tag name inside quotes. This is kind of CSS SELCETORS.
+And it only gives one element at a time. If multiple elements have the same class name or tag name then it will give us the first element with that id or name.
+
+## querySelectorAll
+
+The process is similar with `querySelector` to access DOM Elements with `querySelectorAll`. But the key difference between them is that `querySelectorAll` gives us a NODE LIST. NODE LIST is also an array like object. And instead of giving one element at a time like `querySelector` it gives all elements in node list.
+
 2. How do you **create and insert a new element into the DOM**?
+   **dAnswer 2**
+   <!-- create -->
+   To create an HTML Element using DOM We have to use `createElement` function. Inside function argument we have to pass the tag name of the element that we want to create.
+   e.g. const paragraph = document.createElement("p")
+
+<!-- Insert Element to dom -->
+
+WE can insert that paragraph element to a parentobject.
+e.g. parentObject.appentChild(paragraph)
+Now we have a new paragraph element in our html.
+
 3. What is **Event Bubbling** and how does it work?
+   **Answer 3**
+   Event Bubbling is a feature of DOM that bubbles up an event to the parent element till the last parent (window). It means any event happend to an element the event goes up to his parent elements. So if we have an event to an element inside an window then we also have the same event on the window.
+
 4. What is **Event Delegation** in JavaScript? Why is it useful?
+   **Answer 4**
+   Event `Delegation` is a feature to addEventListener in an efficient way. If we have many child element and we need to catch event on these child element then instead of adding event listener to all the child element individually, we can add event listener to the parent object. Because we know event bubbles up to it's parent element. So adding event listner to the parent element and using `event.target` we can get that child which is trigered on that event.
+
+So instead of using 100 event listener we can get that 100 child by adding event listener to their parents.
+
 5. What is the difference between **preventDefault() and stopPropagation()** methods?
+   **Answer 5**
 
----
+## preventDefauld()
 
-## 🧪 Challenges Part (10 Marks)
+`preventDefault()` is used to stop the default behaviour of browser when any event happens.
+e.g. form auto submit. if we have a button inside form and it has a click event it automatically submit the form. So if we don't want to submit the form automatically then we use `preventDefault()`
 
-- On clicking the **Copy button**, show an alert and **increase the copy count** (3 Marks)
+## stopPropagation()
 
-- Hotline number will be **copied on click** so it can be pasted anywhere (4 Marks)
+`stopPropagation()` this function is used to stop event bubbling. By default event bubbles up to his parent element. But if we don't want the event to bubbles up we use `stopPropagation()`. It doesn't let the event go to the parent.
 
-💡Hint: You can ask for Help from `ChatGPT` Mamma . Just copy the below prompt , generate answer. use it with your own way.
+## difference
 
-```bash
-I have a card with some text and a button inside it. I want that when a user clicks the button, some specific text from the card is copied to the clipboard using JavaScript. Please provide the code and explain it step by step.
-```
-
-- After clicking on the **Call button**, the **exact time of the call** will be shown in the Call History section (3 Marks)
-
-💡Hint: Search Google with that below question
-
-```bash
-How to get current local time in js
-```
-
----
-
-## ⚙️ Technology Stack
-
-- HTML
-- CSS ( Vanilla , Tailwind CSS , DaisyUI , Others - wheatever you like )
-- JavaScript ( Vanilla only. No Framework / Library Allowed )
-
----
-
-## 📌 Rules
-
-- ✅ Minimum **5 meaningful commits** required
-- ❌ No Lorem Ipsum or dummy placeholder text. Use **relevant content only**
-
----
-
-## 🔗 What to Submit
-
-- 📂 **GitHub Repository**
-- 🌐 **Live Link**
-
----
-
-# Let's Code and Achieve your Dream 🎯
+. preventDefault() to stop the default action of the browser
+. stopPropagation() to stop event bubbling
